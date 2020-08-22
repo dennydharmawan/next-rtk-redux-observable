@@ -5,6 +5,8 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.9.1",
+    "@reduxjs/toolkit": "^1.4.0",
+    "@types/react-redux": "^7.1.9",
     "clsx": "^1.1.1",
     "jss-plugin-nested": "^10.4.0",
     "next": "latest",
@@ -13,7 +15,10 @@
     "next-optimized-images": "^2.6.2",
     "next-seo": "^4.7.3",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-redux": "^7.2.1",
+    "redux-observable": "^1.2.0",
+    "rxjs": "^6.6.2"
   },
   "scripts": {
     "dev": "next",

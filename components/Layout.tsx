@@ -1,5 +1,6 @@
-import Header from './Header';
-import { Grid } from '@material-ui/core';
+import { Grid } from "@material-ui/core";
+
+import Header from "./Header";
 
 const Layout: React.FC = ({ children }) => {
   return (

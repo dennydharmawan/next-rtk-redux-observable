@@ -1,6 +1,5 @@
-import { NextPage } from 'next';
+import { Container, Typography } from '@material-ui/core';
 import Layout from '../components/Layout';
-import { Typography, Container } from '@material-ui/core';
 
 export default function index() {
   return (
