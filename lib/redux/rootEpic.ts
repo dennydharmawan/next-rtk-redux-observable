@@ -4,11 +4,11 @@ import { catchError } from "rxjs/operators";
 import { AnyAction } from "@reduxjs/toolkit";
 
 import counterEpic from "./epics/counterEpic";
-import displayLoadingEpic from "./epics/displayLoadingEpic";
 import pingPongEpic from "./epics/pingPongEpic";
+import showLoadingEpic from "./epics/showLoadingEpic";
 import { RootState } from "./store";
 
-const epics = [pingPongEpic, displayLoadingEpic, counterEpic];
+const epics = [pingPongEpic, showLoadingEpic, counterEpic];
 export type MyEpic = Epic<AnyAction, AnyAction, RootState>;
 const dependencies = () => {};
 

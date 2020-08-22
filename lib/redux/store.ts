@@ -18,12 +18,12 @@ const store = configureStore({
 
 epicMiddleware.run(rootEpic as any);
 
-// if (isDevelopmentMode && module.hot) {
-//   module.hot.accept('./rootReducer', () => {
-//     const newRootReducer = require('./rootReducer').default;
-//     store.replaceReducer(newRootReducer);
-//   });
-// }
+if (isDevelopmentMode && module.hot) {
+  module.hot.accept('./rootReducer', () => {
+    const newRootReducer = require('./rootReducer').default;
+    store.replaceReducer(newRootReducer);
+  });
+}
 
 export type RootState = ReturnType<typeof store.getState>;
 

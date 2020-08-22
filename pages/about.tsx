@@ -1,9 +1,11 @@
-import { Button } from '@material-ui/core';
-import { NextSeo } from 'next-seo';
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment } from '../lib/redux/slices/counterSlice';
-import { RootState } from '../lib/redux/store';
+import { NextSeo } from "next-seo";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { Button } from "@material-ui/core";
+
+import { decrement, increment } from "../lib/redux/slices/counterSlice";
+import { RootState } from "../lib/redux/store";
 
 export default function about() {
   const counter = useSelector((state: RootState) => state.counter);
@@ -46,14 +48,14 @@ export default function about() {
       <Button
         variant="contained"
         color="primary"
-        onClick={() => dispatch({ type: 'LOADING_START' })}
+        onClick={() => dispatch({ type: 'START_FETCHING' })}
       >
         Show Loading
       </Button>
       <Button
         variant="contained"
         color="primary"
-        onClick={() => dispatch({ type: 'LOADING_END' })}
+        onClick={() => dispatch({ type: 'END_FETCHING' })}
       >
         Show Loading
       </Button>
