@@ -18,7 +18,9 @@ const store = configureStore({
 
 epicMiddleware.run(rootEpic as any);
 
+// @ts-ignore
 if (isDevelopmentMode && module.hot) {
+  // @ts-ignore
   module.hot.accept('./rootReducer', () => {
     const newRootReducer = require('./rootReducer').default;
     store.replaceReducer(newRootReducer);

@@ -1,15 +1,18 @@
 import { NextSeo } from "next-seo";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 
 import { Button } from "@material-ui/core";
 
 import { decrement, increment } from "../lib/redux/slices/counterSlice";
+import { addJob, removeJob } from "../lib/redux/slices/jobQueueSlice";
 import { RootState } from "../lib/redux/store";
 
 export default function about() {
   const counter = useSelector((state: RootState) => state.counter);
   const dispatch = useDispatch();
+  dispatch({ type: 'INITIALIZATION' });
 
   return (
     <div>
@@ -50,15 +53,29 @@ export default function about() {
         color="primary"
         onClick={() => dispatch({ type: 'START_FETCHING' })}
       >
-        Show Loading
+        Start Fetching
       </Button>
       <Button
         variant="contained"
         color="primary"
         onClick={() => dispatch({ type: 'END_FETCHING' })}
       >
-        Show Loading
+        End Fetching
       </Button>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => dispatch(addJob({ id: uuidv4(), delay: 4 }))}
+      >
+        Start Job
+      </Button>
+      {/* <Button
+        variant="contained"
+        color="primary"
+        onClick={() => dispatch(removeJob('a'))}
+      >
+        Remove Job
+      </Button> */}
     </div>
   );
 }

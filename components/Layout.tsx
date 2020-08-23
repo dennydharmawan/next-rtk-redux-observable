@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+
 import { Grid } from "@material-ui/core";
 
 import Header from "./Header";

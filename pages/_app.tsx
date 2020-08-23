@@ -1,12 +1,14 @@
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { ThemeProvider } from '@material-ui/core/styles';
-import { DefaultSeo } from 'next-seo';
-import { AppProps } from 'next/app';
-import PropTypes from 'prop-types';
-import { useEffect } from 'react';
-import { Provider } from 'react-redux';
-import store from '../lib/redux/store';
-import theme from '../lib/theme';
+import { DefaultSeo } from "next-seo";
+import { AppProps } from "next/app";
+import PropTypes from "prop-types";
+import { useEffect } from "react";
+import { Provider, useDispatch } from "react-redux";
+
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider } from "@material-ui/core/styles";
+
+import store from "../lib/redux/store";
+import theme from "../lib/theme";
 
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {

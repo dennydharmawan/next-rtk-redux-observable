@@ -15,7 +15,7 @@ import { AnyAction } from "@reduxjs/toolkit";
 
 import { MyEpic } from "../rootEpic";
 
-const showLoadingEpic$: MyEpic = (action$) => {
+const showLoadingEpic: MyEpic = (action$) => {
   const fetchingStarted$ = action$.pipe(ofType('START_FETCHING'));
   const fetchingEnded$ = action$.pipe(ofType('END_FETCHING'));
   const spinnerShown$ = action$.pipe(ofType('SHOW_SPINNER'));
@@ -47,13 +47,10 @@ const showLoadingEpic$: MyEpic = (action$) => {
   );
 
   return merge(showSpinner$, timeoutSpinner$, hideSpinner$).pipe(
-    tap((action) => {
-      console.log(action);
-      return action;
-    })
+    tap((action) => console.log(action))
   );
 };
 
-export default showLoadingEpic$;
+export default showLoadingEpic;
 
 //https://stackoverflow.com/questions/56356053/loading-indication-with-a-delay-and-anti-flickering-in-rxjs/56361092
